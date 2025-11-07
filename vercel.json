@@ -1,9 +1,21 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "vehicle.py", "use": "@vercel/python" }
-  ],
+  "functions": {
+    "main.py": {
+      "runtime": "python3.11"
+    }
+  },
   "routes": [
-    { "src": "/(.*)", "dest": "vehicle.py" }
+    {
+      "src": "/api/vehicle-info",
+      "dest": "/main.py"
+    },
+    {
+      "src": "/health",
+      "dest": "/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/main.py"
+    }
   ]
 }
