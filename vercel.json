@@ -1,8 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "routes": [
-    { "src": "/vehicle-info", "dest": "main.py" },
-    { "src": "/health", "dest": "main.py" },
-    { "src": "/(.*)", "dest": "main.py" }
+  "rewrites": [
+    { "source": "/api/vehicle-info", "destination": "/main.py" },
+    { "source": "/health", "destination": "/main.py" },
+    { "source": "/(.*)", "destination": "/main.py" }
   ]
 }
